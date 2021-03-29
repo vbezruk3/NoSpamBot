@@ -10,7 +10,7 @@ def search(text):
 
     wordsFind = re.findall(r"\S+", text)
 
-    print(wordsFind)
+    print(text)
 
     for word in Words:
 
