@@ -2,6 +2,8 @@ import json
 
 import codecs
 
+import asyncio
+
 def loadFile(FilePath):
     with codecs.open(FilePath, encoding = 'utf-8') as file:
         data = json.loads(file.read())

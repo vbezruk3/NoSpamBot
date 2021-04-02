@@ -1,5 +1,7 @@
 import json, codecs, os, files, tree    #Работаем с json
 
+import asyncio
+
 from config import *
 
 accesses = {}
@@ -10,7 +12,6 @@ def load():
     accesses = files.loadFile(AccessesPath)
    
 def save():
-
     files.saveFile(accesses, AccessesPath)
 
 def check(access):

@@ -1,5 +1,7 @@
 import os
 
+import asyncio
+
 ConfigPath = os.path.join('config', 'config.json')
 
 WordsPath = os.path.join('data', 'dictionary.json')

@@ -1,10 +1,14 @@
 import sys
 
+import processing
+
 import users
 
 import subprocess
 
 import phrases
+
+import asyncio
 
 from main import bot, dp
 
@@ -26,24 +30,11 @@ async def echoStart(message: Message):
 async def echoHelp(message: Message):
 '''
 
+@dp.message_handler(content_types=['voice'])
+async def echoAudioMessage(message: Message):
+    await users.unBanUser(message)
+
 @dp.message_handler(content_types = ContentType.TEXT)
 async def echoMessage(message: Message):
-    text = message.text
-
-    if users.checkUser(message.from_user.id) == False:
-            user = {}
-
-            user['id'] = message.from_user.id
-            user['username'] = message.from_user.username
-            user['ban'] = False
-
-            users.addUser('user', user)
-
-            users.save()
-
-    if text and not text.startswith('/'):
-        if phrases.search(text):
-            #users.banUser(message.from_user.id)
-            await message.reply(text = 'Bad')
-        else:
-            await message.reply(text='Ok')
+    users.newUser(message)
+    await processing.checkMessage(message)
