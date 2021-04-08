@@ -125,7 +125,7 @@ async def profane(message: Message):
             await message.reply(text = 'Ти тимчасово забанений\n' +
                                        f'Ще {remain} таких викрутасів і ти будеш назавжди забанений\n' +
                                        'Відправ віршик, щоб повернути довіру до тебе\n')
-        banUser(message.from_user.id, 1)
+            banUser(message.from_user.id, 1)
 
     await bot.delete_message(message.chat.id, message.message_id)
 
