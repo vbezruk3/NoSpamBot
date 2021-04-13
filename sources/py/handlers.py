@@ -27,15 +27,15 @@ async def echoStart(message: Message):
 
 @dp.message_handler(commands = ['addWord'])
 async def echoHelp(message: Message):
-    await message.answer(text = callCommand('/addWord', message.text.replace('/addWord ', '')), message.from_user.id)
+    await message.answer(text = callCommand('/addWord', message.text.replace('/addWord ', ''), message.from_user.id))
 
 @dp.message_handler(commands = ['removeWord'])
 async def echoHelp(message: Message):
-    await message.answer(text = callCommand('/removeWord', message.text.replace('/removeWord ', '')), message.from_user.id)
+    await message.answer(text = callCommand('/removeWord', message.text.replace('/removeWord ', ''), message.from_user.id))
 
 @dp.message_handler(commands = ['checkWord'])
 async def echoHelp(message: Message):
-    await message.answer(text = callCommand('/checkWord', message.text.replace('/checkWord ', '')), message.from_user.id)
+    await message.answer(text = callCommand('/checkWord', message.text.replace('/checkWord ', ''), message.from_user.id))
 
 @dp.message_handler(content_types = ['voice'])
 async def echoAudioMessage(message: Message):
