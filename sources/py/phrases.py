@@ -43,7 +43,7 @@ def isProfane(text):
 
 def createWord(text):
 
-    word = []
+    word = {}
 
     word['number'] = int(len(Words) + 1)
     word['text'] = str(text)
