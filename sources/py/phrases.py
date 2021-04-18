@@ -20,6 +20,8 @@ def reformatLetter(let, lang):
 def reformatWord(text, lang):
     newText = ''
 
+    text = text.lower()
+
     for let in text:
         newText = newText + reformatLetter(let, lang)
 
@@ -28,8 +30,6 @@ def reformatWord(text, lang):
 def isProfane(text):
 
     wordsFind = re.findall(r"\S+", text)
-
-    print(text)
 
     for word in Words:
         for wordFind in wordsFind:

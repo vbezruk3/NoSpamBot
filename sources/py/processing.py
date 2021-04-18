@@ -15,7 +15,10 @@ from aiogram.types import Message, User, ContentType
 async def checkMessage(message: Message):
     text = message.text
 
-    if phrases.isProfane(phrases.reformatWord(text, 'ru')) or phrases.isProfane(phrases.reformatWord(text, 'en')):
-        await users.profane(message)
-    else:
+    if users.getAccess(message.from_user.id) == 'admin':
         await users.notProfane(message)
+    else:
+        if phrases.isProfane(phrases.reformatWord(text, 'ru')) or phrases.isProfane(phrases.reformatWord(text, 'en')):
+            await users.profane(message)
+        else:
+            await users.notProfane(message)

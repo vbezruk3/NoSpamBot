@@ -39,6 +39,10 @@ async def echoHelp(message: Message):
 async def echoHelp(message: Message):
     await message.answer(text = commands.callCommand('/checkWord', message.text.replace('/checkWord ', ''), message.from_user.id))
 
+@dp.message_handler(commands = ['checkProfane'])
+async def echoHelp(message: Message):
+    await message.answer(text = commands.callCommand('/checkProfane', message.text.replace('/checkProfane ', ''), message.from_user.id))
+
 @dp.message_handler(content_types = ['voice'])
 async def echoAudioMessage(message: Message):
     await users.unBanUser(message)

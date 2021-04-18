@@ -10,3 +10,5 @@ def callCommand(command, arg, t_id):
             return phrases.removeWord(arg)
         if command == '/checkWord':
             return phrases.checkWord(arg)
+        if command == '/checkProfane':
+            return phrases.isProfane(phrases.reformatWord(arg, 'ru')) or phrases.isProfane(phrases.reformatWord(arg, 'en'))

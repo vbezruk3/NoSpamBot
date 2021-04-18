@@ -1,4 +1,4 @@
 {
-    "admin": ["/addWord", "/removeWord", "/checkWord"],
+    "admin": ["/addWord", "/removeWord", "/checkWord", "/checkProfane"],
     "user": []
 }
